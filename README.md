@@ -2,7 +2,11 @@
 
 Homebrew tap for uinaf command-line tools.
 
-## Install (order: Homebrew → Direct binary download → Source build)
+## Released tools
+
+Both formulas below are released and available via this tap.
+
+## Install (Homebrew, direct binary download, or source build)
 
 ### healthd
 
@@ -52,7 +56,7 @@ brew install tccutil-rs
 2) **Direct binary download**
 
 ```bash
-VERSION="v0.1.1"
+VERSION="v0.2.0"
 ARCH="$(uname -m)"
 case "$ARCH" in
   arm64) ASSET="tccutil-rs_${VERSION}_darwin-arm64.tar.gz" ;;

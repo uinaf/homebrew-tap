@@ -2,15 +2,15 @@ class TccutilRs < Formula
   desc "Manage macOS TCC permissions"
   homepage "https://github.com/uinaf/tccutil"
   license "MIT"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/uinaf/tccutil/releases/download/v0.1.1/tccutil-rs_v0.1.1_darwin-arm64.tar.gz"
-      sha256 "3a5290cd1694a36c27d8799df328522f6b98d4af6281da8927d6b5d1e578cac7"
+      url "https://github.com/uinaf/tccutil/releases/download/v0.2.0/tccutil-rs_v0.2.0_darwin-arm64.tar.gz"
+      sha256 "a5fc28f5b32303e52e3508e00c8707cabef29b2eeb5b2c7fd2225c7b63840353"
     else
-      url "https://github.com/uinaf/tccutil/releases/download/v0.1.1/tccutil-rs_v0.1.1_darwin-amd64.tar.gz"
-      sha256 "d1e59d4243be3fc8573262c5c3b8e87ff221e2b5a606b47a66f0eee08ed5c202"
+      url "https://github.com/uinaf/tccutil/releases/download/v0.2.0/tccutil-rs_v0.2.0_darwin-amd64.tar.gz"
+      sha256 "bc0a21ef6d394f548a405b1a67432e6ca09d8e1efae52513518199dc67fc7280"
     end
   end
 
