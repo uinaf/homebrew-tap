@@ -10,5 +10,5 @@ brew tap uinaf/tap
 
 ## Formulae
 
-- `healthd`
-- `tccutil-rs` (planned)
+- `healthd` (released)
+- `tccutil-rs` (released)
