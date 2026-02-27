@@ -2,15 +2,15 @@ class Healthd < Formula
   desc "Pluggable local host health-check daemon"
   homepage "https://github.com/uinaf/healthd"
   license "MIT"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/uinaf/healthd/releases/download/v0.3.0/healthd_v0.3.0_darwin_arm64.tar.gz"
-      sha256 "4028d277963d2b2899cfabae9eee93a262fdf2fad2a76dd0c662d8a432aa61d8"
+      url "https://github.com/uinaf/healthd/releases/download/v0.4.0/healthd_v0.4.0_darwin_arm64.tar.gz"
+      sha256 "06509906bea37659f2565050b1f948dae46bbaa2fc324971987652b83525546d"
     else
-      url "https://github.com/uinaf/healthd/releases/download/v0.3.0/healthd_v0.3.0_darwin_amd64.tar.gz"
-      sha256 "8cc0072b6ca35340e522141e6783eb452ec8955aa1dd8c161fbe66ad37877182"
+      url "https://github.com/uinaf/healthd/releases/download/v0.4.0/healthd_v0.4.0_darwin_amd64.tar.gz"
+      sha256 "ba0f0c3a8eb72f1de53a55d6bbe509ac1efb0beb9d3d31e0f9dc7b7a8e9a1d95"
     end
   end
 
