@@ -26,6 +26,7 @@ jobs:
       - name: Audit formulae and casks
         run: |
           set -euo pipefail
+          brew update
           brew tap-new --no-git uinaf/tap
           tap_path="$(brew --repository uinaf/tap)"
           rsync -a --delete \
@@ -37,8 +38,16 @@ jobs:
           formulae=(Formula/*.rb)
           casks=(Casks/*.rb)
           if ((${#formulae[@]})); then
-            brew audit --strict --online --formula "${formulae[@]}"
+            names=()
+            for f in "${formulae[@]}"; do
+              names+=("$(basename "${f%.rb}")")
+            done
+            brew audit --strict --online --formula "${names[@]}"
           fi
           if ((${#casks[@]})); then
-            brew audit --online --cask "${casks[@]}"
+            names=()
+            for f in "${casks[@]}"; do
+              names+=("$(basename "${f%.rb}")")
+            done
+            brew audit --online --cask "${names[@]}"
           fi
