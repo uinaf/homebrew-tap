@@ -22,13 +22,17 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
       - name: Audit formulae and casks
         run: |
           set -euo pipefail
           brew update
-          brew tap-new --no-git uinaf/tap
-          tap_path="$(brew --repository uinaf/tap)"
+          tap="${GITHUB_REPOSITORY_OWNER}/tap"
+          brew tap-new --no-git "$tap"
+          brew trust --tap "$tap"
+          tap_path="$(brew --repository "$tap")"
           rsync -a --delete \
             --exclude .git \
             --exclude .github \
@@ -37,17 +41,19 @@ jobs:
           shopt -s nullglob
           formulae=(Formula/*.rb)
           casks=(Casks/*.rb)
+          audit_status=0
           if ((${#formulae[@]})); then
             names=()
             for f in "${formulae[@]}"; do
-              names+=("$(basename "${f%.rb}")")
+              names+=("${tap}/$(basename "${f%.rb}")")
             done
-            brew audit --strict --online --formula "${names[@]}"
+            brew audit --strict --online --formula "${names[@]}" || audit_status=$?
           fi
           if ((${#casks[@]})); then
             names=()
             for f in "${casks[@]}"; do
-              names+=("$(basename "${f%.rb}")")
+              names+=("${tap}/$(basename "${f%.rb}")")
             done
-            brew audit --online --cask "${names[@]}"
+            brew audit --online --cask "${names[@]}" || audit_status=$?
           fi
+          exit "$audit_status"
