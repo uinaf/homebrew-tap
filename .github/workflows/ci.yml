@@ -26,6 +26,9 @@ jobs:
           persist-credentials: false
 
       - name: Audit formulae and casks
+        env:
+          # Authenticated GitHub API for --online audits (unauthenticated CI IPs hit rate limits).
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           brew update
