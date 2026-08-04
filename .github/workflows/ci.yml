@@ -47,7 +47,10 @@ jobs:
             for f in "${formulae[@]}"; do
               names+=("${tap}/$(basename "${f%.rb}")")
             done
-            brew audit --strict --online --formula "${names[@]}" || audit_status=$?
+            # Skip --strict: GoReleaser always emits `version`, which GitHub
+            # release URLs already encode, and brew audit --strict rejects that
+            # as redundant. --online still catches dead URLs and checksum issues.
+            brew audit --online --formula "${names[@]}" || audit_status=$?
           fi
           if ((${#casks[@]})); then
             names=()
