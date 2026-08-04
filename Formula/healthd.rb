@@ -5,7 +5,6 @@
 class Healthd < Formula
   desc "Pluggable local host health-check daemon"
   homepage "https://github.com/uinaf/healthd"
-  version "0.5.1"
   license "MIT"
   depends_on :macos
 
