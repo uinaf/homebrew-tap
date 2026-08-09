@@ -13,7 +13,7 @@ class Attach < Formula
   end
 
   test do
-    assert_match "attach put", shell_output("#{bin}/attach --help", 2)
-    assert_match "attach put", shell_output("#{bin}/gh-attach --help", 2)
+    assert_match "attach put", shell_output("#{bin}/attach --help 2>&1", 2)
+    assert_match "attach put", shell_output("#{bin}/gh-attach --help 2>&1", 2)
   end
 end
