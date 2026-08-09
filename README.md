@@ -11,6 +11,7 @@ brew tap uinaf/tap
 ## Available formulae
 
 ```bash
+brew install attach
 brew install healthd
 brew install tccutil-rs
 brew install --cask endelito
