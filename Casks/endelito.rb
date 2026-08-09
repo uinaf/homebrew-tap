@@ -1,6 +1,6 @@
 cask "endelito" do
-  version "1.2.4"
-  sha256 "0fd1a1d4209d04197ce2f247328609a6d26e66dae4ad27928dd9301bfbd10e47"
+  version "1.2.8"
+  sha256 "0adf40f98acf745f653ef9728ba44ff9f59673e294d7d2317257dce01941de4e"
 
   url "https://github.com/uinaf/endelito/releases/download/v#{version}/endelito-#{version}-macos-arm64.zip"
   name "Endelito"
