@@ -1,8 +1,8 @@
 class Attach < Formula
   desc "Upload PR and validation media to an attach Worker"
   homepage "https://github.com/uinaf/attach"
-  url "https://registry.npmjs.org/@uinaf/attach-cli/-/attach-cli-0.3.2.tgz"
-  sha256 "379a9924efd5d394c8915ef567e4eedd67e55b861beddfbdce97c69b45d75f26"
+  url "https://registry.npmjs.org/@uinaf/attach-cli/-/attach-cli-0.4.0.tgz"
+  sha256 "447709dcd0dbcb1067f2af71ae4b9a3abbc3ad6b8194985ebea31045fd6a2c75"
   license "MIT"
 
   depends_on "node"
@@ -13,7 +13,7 @@ class Attach < Formula
   end
 
   test do
-    assert_match "attach put", shell_output("#{bin}/attach --help 2>&1", 2)
-    assert_match "attach put", shell_output("#{bin}/gh-attach --help 2>&1", 2)
+    assert_match "attach put", shell_output("#{bin}/attach --help")
+    assert_match "attach put", shell_output("#{bin}/gh-attach --help")
   end
 end
