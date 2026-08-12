@@ -1,8 +1,8 @@
 class Attach < Formula
   desc "Upload PR and validation media to an attach Worker"
   homepage "https://github.com/uinaf/attach"
-  url "https://registry.npmjs.org/@uinaf/attach-cli/-/attach-cli-0.5.2.tgz"
-  sha256 "c103f1124452d1b1b771d572d4d88df511eaee77602bb2624fc610975f6a67f0"
+  url "https://registry.npmjs.org/@uinaf/attach-cli/-/attach-cli-0.6.0.tgz"
+  sha256 "1e91a1c8fa22f40f193124de48044ba14ac66efeb1f3f0cb736d633fbdc43da4"
   license "MIT"
 
   depends_on "node"
