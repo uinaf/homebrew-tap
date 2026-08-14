@@ -1,3 +1,5 @@
+![homebrew-tap — Homebrew formulae for uinaf.](https://uinaf.dev/og/banner/homebrew-tap.png)
+
 # uinaf/homebrew-tap
 
 Homebrew tap for uinaf CLI tools.
