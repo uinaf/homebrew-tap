@@ -32,6 +32,12 @@ cask "slopguard" do
       "git",
       "trufflehog",
     ]
+  livecheck do
+    url :homepage
+    regex(%r{slopguard/v?(\d+(?:\.\d+)+)}i)
+    strategy :github_releases
+  end
+
   name "slopguard"
 
   binary "slopguard"

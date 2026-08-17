@@ -28,6 +28,12 @@ cask "slopmachine" do
     end
   end
 
+  livecheck do
+    url :homepage
+    regex(%r{slopmachine/v?(\d+(?:\.\d+)+)}i)
+    strategy :github_releases
+  end
+
   name "slopmachine"
 
   binary "slopmachine"
