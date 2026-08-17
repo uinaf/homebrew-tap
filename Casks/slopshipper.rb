@@ -7,5 +7,7 @@ cask "slopshipper" do
   desc "Retired; replaced by slopmachine in uinaf/ffsstack"
   homepage "https://github.com/uinaf/ffsstack"
 
+  binary "slopshipper"
+
   disable! date: "2026-08-16", because: "slopshipper was renamed slopmachine and lives in uinaf/ffsstack; install with: brew install --cask uinaf/tap/slopmachine"
 end
