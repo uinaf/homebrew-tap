@@ -1,6 +1,6 @@
 cask "slopwake" do
-  version "1.3.3"
-  sha256 "aaea9b177fc9d1ec15a3597561ee121c85f55f0d3b1843918050e8ecb7d88b00"
+  version "1.3.4"
+  sha256 "f279ea354b3718809632d8c061bb04cc81bb6e7ef566e7da91bcaf0fc06a2c49"
 
   url "https://github.com/uinaf/slopwake/releases/download/v#{version}/slopwake-#{version}-macos-universal.zip"
   name "slopwake"
