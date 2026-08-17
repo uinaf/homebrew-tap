@@ -5,21 +5,21 @@
 class Healthd < Formula
   desc "Pluggable local host health-check daemon"
   homepage "https://github.com/uinaf/healthd"
-  version "0.5.3"
+  version "0.5.4"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/uinaf/healthd/releases/download/v0.5.3/healthd_v0.5.3_darwin_amd64.tar.gz"
-    sha256 "aa5b045a62100ee658ff60342ab1b62366bd70d393c319f23c0078edf2847299"
+    url "https://github.com/uinaf/healthd/releases/download/v0.5.4/healthd_v0.5.4_darwin_amd64.tar.gz"
+    sha256 "96050b0f3f9512c7cbe5f6661d84fc11030346a74e90a6799ed2e4b5e0ba325f"
 
     define_method(:install) do
       bin.install "healthd"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/uinaf/healthd/releases/download/v0.5.3/healthd_v0.5.3_darwin_arm64.tar.gz"
-    sha256 "177ecd09b540f68b08fd2b50a1f6f78991aeed57f793b1894b63f54e3a8e253a"
+    url "https://github.com/uinaf/healthd/releases/download/v0.5.4/healthd_v0.5.4_darwin_arm64.tar.gz"
+    sha256 "83ae24c651c6e5b4ed64f1cc6ec2a7df7f2e1dff29a53087e61e4bcc82497bcf"
 
     define_method(:install) do
       bin.install "healthd"
