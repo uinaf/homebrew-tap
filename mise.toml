@@ -43,6 +43,9 @@ tap_path="$(mktemp -d "$tap_parent/homebrew-verification-XXXXXX")"
 rsync -a ./ "$tap_path/"
 cd "$tap_path"
 git symbolic-ref refs/remotes/origin/HEAD "refs/remotes/origin/${GITHUB_BASE_REF:-main}"
+if [ -z "$(git diff --name-only --diff-filter=ACMRT origin/HEAD...HEAD -- Formula Casks)" ]; then
+  exit 0
+fi
 tap="uinaf/${tap_path##*/homebrew-}"
 trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"' EXIT
 brew trust --tap "$tap"
