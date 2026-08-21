@@ -1,0 +1,53 @@
+[tools]
+actionlint = "1.7.12"
+"pipx:zizmor" = "1.29.0"
+
+[env]
+HOMEBREW_NO_AUTO_UPDATE = "1"
+
+[tasks.audit]
+description = "Audit every formula and cask through Homebrew"
+sources = ["Formula/**/*.rb", "Casks/**/*.rb", "mise.toml"]
+run = '''
+tap_parent="$(brew --repository)/Library/Taps/uinaf"
+mkdir -p "$tap_parent"
+tap_path="$(mktemp -d "$tap_parent/homebrew-verification-XXXXXX")"
+rsync -a ./ "$tap_path/"
+cd "$tap_path"
+tap="uinaf/${tap_path##*/homebrew-}"
+trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"' EXIT
+brew trust --tap "$tap"
+brew audit --online --except=version --tap "$tap"
+# GoReleaser emits healthd's explicit version; audit every other version.
+brew audit --online --only=version --formula "$tap/attach" "$tap/tccutil-rs"
+brew audit --online --only=version --cask \
+  "$tap/endelito" "$tap/slopguard" "$tap/slopmachine" \
+  "$tap/slopshipper" "$tap/slopwake"
+'''
+
+[tasks.audit-changed]
+description = "Audit formulae and casks changed from the base branch"
+run = '''
+tap_parent="$(brew --repository)/Library/Taps/uinaf"
+mkdir -p "$tap_parent"
+tap_path="$(mktemp -d "$tap_parent/homebrew-verification-XXXXXX")"
+rsync -a ./ "$tap_path/"
+cd "$tap_path"
+tap="uinaf/${tap_path##*/homebrew-}"
+trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"' EXIT
+brew trust --tap "$tap"
+brew audit --online --changed
+'''
+
+[tasks.verify-actions]
+description = "Verify GitHub Actions"
+sources = [".github/**", "mise.toml"]
+run = '''
+actionlint
+zizmor .github/workflows
+'''
+
+[tasks.verify]
+description = "Verify the tap with cached independent lanes"
+depends = ["audit", "verify-actions"]
+run = "git diff --check"
