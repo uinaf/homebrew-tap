@@ -39,7 +39,6 @@ jobs:
               - 'Formula/**'
               - 'Casks/**'
             full:
-              - 'Formula/healthd.rb'
               - 'mise.toml'
               - '.github/workflows/ci.yml'
 
