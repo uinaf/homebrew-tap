@@ -17,6 +17,8 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: read
     outputs:
       audit: ${{ steps.filter.outputs.audit }}
       full: ${{ steps.filter.outputs.full }}
