@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 5
     permissions:
       contents: read
+      pull-requests: read
     outputs:
       audit: ${{ steps.filter.outputs.audit }}
       full: ${{ steps.filter.outputs.full }}
