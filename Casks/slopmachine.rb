@@ -5,26 +5,22 @@ cask "slopmachine" do
   on_macos do
     on_intel do
       sha256 "1bd08b545d8d0e8a1906ba861af26ce56a766596dd69175bb5d9c2a9af655ce8"
-      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_darwin_amd64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
       sha256 "9562c8c4376f397554b4241ed5ad68c8b477b4d3041f5f0bcf69acd48a09f645"
-      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_darwin_arm64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
       sha256 "6308c1007f009b235d1bc7fabc6ec083cdfe33ea5aaa4152e6b0c351fd612433"
-      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_linux_amd64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_linux_amd64.tar.gz"
     end
     on_arm do
       sha256 "bdaf90c9300731125db78f1b8af60adc8b1591aae5ff13fe90e8f9f153ad246c"
-      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_linux_arm64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopmachine%2Fv#{version}/slopmachine_v#{version}_linux_arm64.tar.gz"
     end
   end
 

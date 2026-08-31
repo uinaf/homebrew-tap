@@ -5,26 +5,22 @@ cask "slopguard" do
   on_macos do
     on_intel do
       sha256 "1e37ec0f79469b184a9d62bad29063439d4f8d2c68ecf61e7f74b4297ec8dde5"
-      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_amd64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
       sha256 "c1396f2a00c2b402ace6168f54f9d652b5625419637486264a2bb64135514c4c"
-      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_arm64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
       sha256 "dafac5979e48c4cdf30e116b627327705c3d27635e0b27f2b7d94f26856b27db"
-      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_amd64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_amd64.tar.gz"
     end
     on_arm do
       sha256 "889b9ead5039a2a92e79e9e1927a2c8a7ecf8e0dcd85e7d7cebd745aa13885ad"
-      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_arm64.tar.gz",
-        verified: "github.com/uinaf/ffss/"
+      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_arm64.tar.gz"
     end
   end
 
