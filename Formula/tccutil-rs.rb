@@ -5,19 +5,19 @@
 class TccutilRs < Formula
   desc "Macos tcc.db management utility"
   homepage "https://github.com/uinaf/tccutil-rs"
-  url "https://github.com/uinaf/tccutil-rs/archive/refs/tags/v0.2.12.tar.gz"
-  sha256 "6c5ae13f5fa527245a750a4efacc0a54bcae401aa244b34b15acc720eca41fcd"
+  url "https://github.com/uinaf/tccutil-rs/archive/refs/tags/v0.2.13.tar.gz"
+  sha256 "cc399293ee5a4ef6f19f5a30dab561e62cccd57e86cdf017f3a61776db4882e3"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/uinaf/tccutil-rs/releases/download/v0.2.12/tccutil-rs-0.2.12-darwin-amd64.tar.gz"
-      sha256 "efe036aa5dffd6ad934f370880db5c876f55a52b254c750f75889842cdb2712b"
+      url "https://github.com/uinaf/tccutil-rs/releases/download/v0.2.13/tccutil-rs-0.2.13-darwin-amd64.tar.gz"
+      sha256 "0f99dea0db5eb5a9909edf56758a0f3e72d8039f45287631c1de7360d54d3bc2"
     end
 
     on_arm do
-      url "https://github.com/uinaf/tccutil-rs/releases/download/v0.2.12/tccutil-rs-0.2.12-darwin-arm64.tar.gz"
-      sha256 "1a17d266feb5629f179011f4c8279df1e2921f33f728d4306b0e4b913c9b350c"
+      url "https://github.com/uinaf/tccutil-rs/releases/download/v0.2.13/tccutil-rs-0.2.13-darwin-arm64.tar.gz"
+      sha256 "323a88a91a36332e754ac119659075961dcc2b1d90726f412ee85fe99738dad9"
     end
   end
 
