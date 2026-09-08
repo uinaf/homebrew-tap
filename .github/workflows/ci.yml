@@ -83,10 +83,11 @@ jobs:
         env:
           CHANGES_RESULT: ${{ needs.changes.result }}
           AUDIT_RESULT: ${{ needs.audit.result }}
+          AUDIT_SELECTED: ${{ github.event_name != 'pull_request' && 'true' || needs.changes.outputs.audit }}
+          FULL_SELECTED: ${{ github.event_name != 'pull_request' && 'true' || needs.changes.outputs.full }}
+          AUDIT_EXPECTED: ${{ (github.event_name != 'pull_request' || needs.changes.outputs.audit == 'true' || needs.changes.outputs.full == 'true') && 'success' || 'skipped' }}
         run: |
-          if [[ "$CHANGES_RESULT" != "success" ]]; then
-            exit 1
-          fi
-          if [[ "$AUDIT_RESULT" != "success" && "$AUDIT_RESULT" != "skipped" ]]; then
-            exit 1
-          fi
+          test "$CHANGES_RESULT" = success
+          test "$AUDIT_SELECTED" = true || test "$AUDIT_SELECTED" = false
+          test "$FULL_SELECTED" = true || test "$FULL_SELECTED" = false
+          test "$AUDIT_RESULT" = "$AUDIT_EXPECTED"
