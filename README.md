@@ -18,7 +18,6 @@ brew install healthd
 brew install tccutil-rs
 brew install --cask endelito
 brew install --cask slopguard
-brew install --cask slopmachine
 brew install --cask slopwake
 ```
 
