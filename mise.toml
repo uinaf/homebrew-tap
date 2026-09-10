@@ -16,7 +16,7 @@ tap_path="$(mktemp -d "$tap_parent/homebrew-verification-XXXXXX")"
 rsync -a --exclude=.git ./ "$tap_path/"
 cd "$tap_path"
 tap="uinaf/${tap_path##*/homebrew-}"
-trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"' EXIT
+trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"; brew developer off >/dev/null 2>&1 || true' EXIT
 brew trust --tap "$tap"
 brew audit --online --except=version --tap "$tap"
 # GoReleaser emits explicit versions; audit every other current and future item.
@@ -47,7 +47,7 @@ tap_path="$(mktemp -d "$tap_parent/homebrew-verification-XXXXXX")"
 rsync -a ./ "$tap_path/"
 cd "$tap_path"
 tap="uinaf/${tap_path##*/homebrew-}"
-trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"' EXIT
+trap 'brew untrust --tap "$tap" >/dev/null 2>&1 || true; rm -rf -- "$tap_path"; brew developer off >/dev/null 2>&1 || true' EXIT
 brew trust --tap "$tap"
 brew audit --online --except=version --changed
 git diff --name-only --diff-filter=ACMRT origin/HEAD...HEAD -- ':(glob)Formula/**/*.rb' ':(glob)Casks/**/*.rb' | sort | while IFS= read -r path; do

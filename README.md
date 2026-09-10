@@ -34,3 +34,5 @@ The default command restores valid Homebrew audit and workflow-check results.
 Use the forced form after deletions, renames, untracked files, or broad changes.
 Pull requests audit changed formulae and casks; main and manual CI runs force the
 complete tap audit.
+Audits are developer commands, so each task turns developer mode back off on
+exit; otherwise `brew update` would track Homebrew `main` instead of stable tags.
