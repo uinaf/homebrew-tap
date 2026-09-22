@@ -13,7 +13,6 @@ brew tap uinaf/tap
 ## Available formulae and casks
 
 ```bash
-brew install healthd
 brew install tccutil-rs
 brew install --cask slopguard
 brew install --cask slopwake
