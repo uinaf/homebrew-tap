@@ -9,5 +9,5 @@ cask "slopshipper" do
 
   binary "slopshipper"
 
-  disable! date: "2026-08-16", because: "the CLI is retired; use the slopmachine execution skill at https://github.com/uinaf/ffss"
+  disable! date: "2026-08-16", because: "the CLI is retired; use the slopcourier and slopnanny skills at https://github.com/uinaf/ffss"
 end
