@@ -4,7 +4,7 @@ cask "slopwake" do
 
   url "https://github.com/uinaf/slopwake/releases/download/v#{version}/slopwake-#{version}-macos-universal.zip"
   name "slopwake"
-  desc "Keep your Mac awake while supported coding agents work"
+  desc "Keep your slopshop awake while supported coding agents work"
   homepage "https://github.com/uinaf/slopwake"
 
   livecheck do

@@ -29,7 +29,11 @@ mise run --force verify
 The default command restores valid Homebrew audit and workflow-check results.
 Use the forced form after deletions, renames, untracked files, or broad changes.
 Pull requests audit changed formulae and casks; main and manual CI runs force the
-complete tap audit. GoReleaser formulae declare an explicit version, so the
-version audit skips them and runs on every other formula and cask.
+complete tap audit. Both run `brew style` on the whole tap first, because
+`brew audit` skips RuboCop for taps and casks. Style runs from the tapped copy:
+outside a tap, `brew style` can apply rules casks don't follow, such as
+`Style/FrozenStringLiteralComment`.
+GoReleaser formulae declare an explicit version, so the version audit skips them
+and runs on every other formula and cask.
 Audits are developer commands, so each task turns developer mode back off on
 exit; otherwise `brew update` would track Homebrew `main` instead of stable tags.
