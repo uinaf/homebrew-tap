@@ -3,26 +3,29 @@ cask "slopguard" do
   version "4.3.0"
 
   on_macos do
-    on_intel do
-      sha256 "e8005344cfb1332be7ba83b61d1ad9eb7f50ca272960322ccadc5b25191df748"
-      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_amd64.tar.gz"
-    end
     on_arm do
       sha256 "8033f9eaf0b276ea01d47839602ac87e309d7edd374af9e10901949da306ee53"
       url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_arm64.tar.gz"
     end
-  end
-
-  on_linux do
     on_intel do
-      sha256 "524c85f3d4d7f62e9aa53efe630f472750f669af8ad6e4eeeb3141a3e9da3fc7"
-      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_amd64.tar.gz"
+      sha256 "e8005344cfb1332be7ba83b61d1ad9eb7f50ca272960322ccadc5b25191df748"
+      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_darwin_amd64.tar.gz"
     end
+  end
+  on_linux do
     on_arm do
       sha256 "6463f0f8d678d4162734f2d60a49d9fb26ec470f8dbb0b2eb77a13cb40609df1"
       url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_arm64.tar.gz"
     end
+    on_intel do
+      sha256 "524c85f3d4d7f62e9aa53efe630f472750f669af8ad6e4eeeb3141a3e9da3fc7"
+      url "https://github.com/uinaf/ffss/releases/download/slopguard%2Fv#{version}/slopguard_v#{version}_linux_amd64.tar.gz"
+    end
   end
+
+  name "slopguard"
+  desc "Structured independent code review as a CLI and agent skill"
+  homepage "https://github.com/uinaf/ffss"
 
   livecheck do
     url :homepage
@@ -31,10 +34,6 @@ cask "slopguard" do
   end
 
   depends_on formula: "git"
-  name "slopguard"
 
   binary "slopguard"
-
-  homepage "https://github.com/uinaf/ffss"
-  desc "Structured independent code review as a CLI and agent skill"
 end
