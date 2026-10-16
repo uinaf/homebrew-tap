@@ -5,6 +5,10 @@ actionlint = "1.7.12"
 [env]
 HOMEBREW_NO_AUTO_UPDATE = "1"
 
+# `brew audit` skips RuboCop for taps and casks, so `brew style` runs on the whole
+# tap first, from a tapped copy: outside a tap it applies rules casks don't follow,
+# such as Style/FrozenStringLiteralComment. The trap turns developer mode back off,
+# or `brew update` would track Homebrew main instead of stable tags.
 [tasks.audit]
 description = "Style-check and audit every formula and cask through Homebrew"
 sources = ["Formula/**/*.rb", "Casks/**/*.rb", "mise.toml"]
