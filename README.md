@@ -10,14 +10,15 @@ Homebrew tap for uinaf CLI tools.
 brew tap uinaf/tap
 ```
 
-## Available casks
+## Casks
+
+Each file in [`Casks/`](Casks/) is one cask:
 
 ```bash
 brew install --cask slopguard
-brew install --cask slopwake
 ```
 
-For direct binary and source install instructions, see each tool's repository README.
+Each tool's own README covers binary and source installs.
 
 ## Verification
 
