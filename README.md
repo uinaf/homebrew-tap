@@ -15,7 +15,7 @@ brew tap uinaf/tap
 Each file in [`Casks/`](Casks/) is one cask:
 
 ```bash
-brew install --cask slopguard
+brew install --cask slopwake
 ```
 
 Each tool's own README covers binary and source installs.
